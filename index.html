@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+     <meta name="description" content="Profile card for PandaKing - A developer who loves bamboo and coding">
+     <title>PandaKing</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+
+<article data-testid="test-profile-card" class="profile-card">
+        <figure class="avatar-container">
+            <img data-testid="test-user-avatar" 
+                 src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7" 
+                 alt="A panda sitting and eating bamboo" 
+                 class="avatar">
+        </figure>
+        <div data-testid="test-user-time" class="current-time" id="currentTime">Loading time...</div>
+        <h2 id="user-name" data-testid="test-user-name">PandaKing</h2>
+        <p id="bio" data-testid="test-user-bio">
+            A cheerful panda who loves bamboo and coding! Living life in black and white, but making colorful memories. 🐼
+        </p>
+        <div class="lists-container">
+            <section class="list-section">
+                <h3>Hobbies</h3>
+                <ul data-testid="test-user-hobbies">
+                    <li>🎋 Eating bamboo</li>
+                    <li>💻 Being fluffy</li>
+                    <li>🌳 Climbing trees</li>
+                    <li>😴 Taking naps</li>
+                </ul>
+            </section>
+            
+            <section class="list-section">
+                <h3>Dislikes</h3>
+                <ul data-testid="test-user-dislikes">
+                    <li>🏃 Running fast</li>
+                    <li>🌶️ Spicy food</li>
+                    <li>📱 Social media addiction</li>
+                </ul>
+            </section>
+        </div>
+        
+        <section class="social-section">
+            <h3>Connect with me</h3>
+            <ul data-testid="test-user-social-links" class="social-links">
+                <li data-testid="test-user-social-github"><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li data-testid="test-user-social-Linkedin"><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li data-testid="test-user-social-twitter"><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+            </ul>
+        </section>
+    </article>
+
+         <script>
+
+
+
+    function updateTime() {
+      const now = new Date();
+      let hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      const milliseconds = now.getMilliseconds().toString().padStart(3, '0');
+
+       const am = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12;
+      hours = hours.toString().padStart(2, '0');
+
+      document.getElementById('currentTime').textContent = `${hours}: ${minutes}: ${seconds}.${milliseconds} ${am}`;
+
+   
+
+    }
+
+    updateTime();
+    setInterval(updateTime, 1);
+</script>
+</body>
+</html>
