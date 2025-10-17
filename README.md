@@ -2,7 +2,7 @@ PROFILE CARD COMPONENT
 A responsive and accessible profile card component built with HTML, CSS, and vanilla JavaScript. Features a panda-themed design with real-time clock display.
 
 🚀 Demo
-Live Demo <!-- Replace with your deployed URL -->
+Live Demo (https://danirl7.github.io/Profile_page/)
 
 ✨ Features
 Responsive design that works on mobile, tablet, and desktop
@@ -12,19 +12,22 @@ Clean, panda-themed UI
 Social media links
 Hobbies and dislikes lists
 Keyboard navigation support
+
 🛠️ Technologies Used
 HTML5
 CSS3
 Vanilla JavaScript
+
 💻 Local Development
 Prerequisites
 A modern web browser
 A code editor (VS Code recommended)
 Local development server (optional)
 Installation
-Clone the repository:
+Clone the repository: https://github.com/DanIrl7/Profile_page/
 Open the project:
 Running Locally
+
 Method 1: Direct File Opening
 Simply open the index.html file in your web browser.
 
@@ -45,6 +48,7 @@ test-user-avatar
 test-user-social-links
 test-user-hobbies
 test-user-dislikes
+
 📱 Responsive Breakpoints
 Mobile: < 480px
 Tablet: < 768px
