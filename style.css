@@ -15,14 +15,11 @@
     background-color: var(--panda-white);
     padding: 1rem 2rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
     display: flex;
+    flex-flow: row;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .nav-brand {
@@ -35,8 +32,8 @@
     display: flex;
     gap: 2rem;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 5px;
+    padding: 5px;
 }
 
 .nav-links a {
