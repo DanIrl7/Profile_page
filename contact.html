@@ -13,7 +13,7 @@
         <div class="nav-brand">🐼 PandaKing</div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="about.html" >About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
@@ -25,33 +25,61 @@
             <div class="form-group">
                 <label for="Full-Name">Full Name</label>
                 <input data-testid="test-contact-name" type="text" name="Full-Name" id="Full-Name" required>
-                <span class="error-message" id="name-error" aria-live="polite"></span>
+                <span class="error-message" id="name-error" aria-live="polite">Please enter your name</span>
             </div>
 
             <div class="form-group">
                 <label for="Email">Email</label>
                 <input data-testid="test-contact-email" type="email" name="Email" id="Email" required>
-                <span class="error-message" id="email-error" aria-live="polite"></span>
+                <span data-testid="test-contact-email-error" class="error-message" id="email-error" aria-live="polite"> This email is invalid</span>
             </div>
 
             <div class="form-group">
                 <label for="Subject">Subject</label>
                 <input data-testid="test-contact-subject" type="text" name="Subject" id="Subject" required>
-                <span class="error-message" id="subject-error" aria-live="polite"></span>
+                <span class="error-message" id="subject-error" aria-live="polite">Please enter your subject</span>
             </div>
 
             <div class="form-group">
                 <label for="Message">Message</label>
                 <textarea data-testid="test-contact-message" name="Message" id="Message" required minlength="10"></textarea>
-                <span class="error-message" id="message-error" aria-live="polite"></span>
+                <span class="error-message" id="message-error" aria-live="polite">Please enter your feedback</span>
             </div>
 
             <button data-testid="test-contact-submit" type="submit">Send Message</button>
-            <div id="success-message" class="success-message" aria-live="polite"></div>
+            <div data-testid="success" id="success-message" class="success-message" aria-live="polite"></div>
         </form>
     </main>
 
     <script>
+    const form = document.getElementById('contactForm');
+    
+   
+    const successPopup = document.createElement('div');
+    successPopup.className = 'success-popup';
+    successPopup.setAttribute('data-testid', 'test-contact-success');
+    successPopup.setAttribute('aria-live', 'polite');
+    document.body.appendChild(successPopup);
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        if(form.checkValidity()) {
+            successPopup.textContent = '🎋 Thank you for contacting PandaKing! I will get back to you soon.';
+            successPopup.classList.add('show');
+            
+         
+            setTimeout(() => {
+                successPopup.classList.remove('show');
+            }, 3000);
+
+            form.reset();
+        } else {
+            return;
+        }
+    });
+
+    
 
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     
@@ -67,3 +95,4 @@
 </script>
 
 </body>
+</html>
