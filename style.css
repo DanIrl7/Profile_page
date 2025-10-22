@@ -529,6 +529,7 @@ button[type="submit"]:hover {
         padding: 1.5rem;
         display: block;
         margin-top: 5rem;
+        position: absolute;
     }
 
     .contact-container {
