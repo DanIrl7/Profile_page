@@ -526,7 +526,7 @@ button[type="submit"]:hover {
     }
 
     .contact-container {
-        padding: 5rem;
+        padding: 1rem;
         width: 100%;
         min-height: 100%;
     }
@@ -554,7 +554,7 @@ button[type="submit"]:hover {
 
 @media (max-height: 700px) {
     body {
-        padding: 0;
+        padding: 20px;
     }
 
     .profile-card {
