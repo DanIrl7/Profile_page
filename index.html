@@ -9,6 +9,14 @@
 </head>
 <body>
     
+  <nav class="navbar">
+        <div class="nav-brand">🐼 PandaKing</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
 <article data-testid="test-profile-card" class="profile-card">
         <figure class="avatar-container">
@@ -55,7 +63,16 @@
 
          <script>
 
-
+ const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active');
+        
+        
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
 
     function updateTime() {
       const now = new Date();

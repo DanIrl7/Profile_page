@@ -4,6 +4,61 @@
     --bamboo-green: #4CAF50;
 }
 
+/***********************************************************/
+
+
+/* *********** NAVBAR ******** */
+
+
+
+.navbar {
+    background-color: var(--panda-white);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--panda-black);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: var(--panda-black);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: var(--bamboo-green);
+    color: var(--panda-white);
+}
+ 
+/***********************************************************/
+
+
+/* *********** MAIN PAGE ******** */
+
+
 body {
     background-color: #e0e0e0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -13,6 +68,7 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 20px;
+    padding-top: 80px;
 }
 
 .profile-card {
@@ -123,6 +179,102 @@ li {
     outline: 2px solid var(--bamboo-green);
     outline-offset: 2px;
 }
+  
+
+/***********************************************************/
+
+
+/* *********** CONTACT US ******** */
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    padding: 2rem;
+    width: 50%;
+}
+
+.contact-form {
+    background-color: var(--panda-white);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    /* max-width: 500px; */
+}
+
+.contact-form h2 {
+    color: var(--panda-black);
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--panda-black);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--bamboo-green);
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.success-message {
+    color: var(--bamboo-green);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+button[type="submit"] {
+    background-color: var(--bamboo-green);
+    color: var(--panda-white);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #3d8b40;
+}
+
+
+/***********************************************************/
+
+
+/* *********** RESPONSIVE STYLES ******** */
 
 @media (max-width: 768px) {
     .lists-container {
@@ -164,6 +316,16 @@ li {
         display: block;
         text-align: center;
     }
+
+    .navbar {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -192,6 +354,24 @@ li {
 
     li {
         font-size: 0.9rem;
+    }
+
+        .nav-links {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar {
+        padding: 1rem 0;
+    }
+
+    body {
+        padding-top: 140px;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
     }
 }
 
