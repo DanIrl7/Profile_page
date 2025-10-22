@@ -554,7 +554,7 @@ button[type="submit"]:hover {
 
 @media (max-height: 700px) {
     body {
-        padding: 10px 0;
+        padding: 0;
     }
 
     .profile-card {
