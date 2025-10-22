@@ -517,12 +517,17 @@ button[type="submit"]:hover {
         width: 100%;
     }
 
+    ul {
+        display: block;
+    }
+
     body {
         padding-top: 30px;
     }
 
     .contact-form {
         padding: 1.5rem;
+        display: block;
     }
 
     .contact-container {
